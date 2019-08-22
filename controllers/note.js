@@ -22,7 +22,7 @@ module.exports = {
                 cb(doc);
             }
         });
-    };
+    },
     delete: function(data,cb){
         Note.remove({
             _id: data._id

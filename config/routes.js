@@ -41,4 +41,30 @@ module.exports = function(router) {
             res.json(data);
         });
     });
+    router.patch("/api/headline", function(req,res){
+        headlineController.update(req.body, function(err,data){
+            res.json(data);
+        });
+    });
+    router.get("/api/note/:headline_id?", function(req,res){
+        var query = {};
+        if (req.params.headline_id){
+            query._id = req.params.headline_id;
+        }
+        noteController.get(query, function(err,data){
+            res.json(data);
+        });
+    });
+    router.delete("/api/note/:id", function(req,res){
+        var query = {};
+        query._id = req.params.id;
+        noteController.delete(query, function(err,data){
+            res.json(data);
+        });
+    });
+    router.post("/api/note", function(req,res){
+        noteController.save(req.body, function(data){
+            res.json(data);
+        });
+    });
 }
