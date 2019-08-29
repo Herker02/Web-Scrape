@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(router);
 
-var db = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadLines";
+var db = process.env.MONGODB_URI || "mongodb://localhost/Web-Scrape";
 
 mongoose.connect(db, function(error){
     if(error){

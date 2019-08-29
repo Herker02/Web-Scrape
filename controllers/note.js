@@ -1,7 +1,7 @@
 var Note = require("../models/Note");
 var makeDate = require("../public/scripts/date");
 
-module.exports = {
+var noteScrape = {
     get: function(data,cb){
         Note.find({
             _headlineId: data._id
@@ -28,4 +28,5 @@ module.exports = {
             _id: data._id
         }, cb);
     }
-}
+};
+module.exports = noteScrape;

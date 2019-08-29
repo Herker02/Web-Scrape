@@ -26,7 +26,7 @@ var scrape = function(cb){
         }
     });
     cb(articles);
-    });
+  });
 };
 
 module.exports = scrape;

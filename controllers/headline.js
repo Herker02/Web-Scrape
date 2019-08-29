@@ -3,7 +3,7 @@ var makeDate = require("../public/scripts/date");
 
 var Headline = require("../models/Headline");
 
-module.exports = {
+var headlineScrape = {
     fetch: function(cb) {
         scrape(function(data){
             var articles = data;
@@ -34,4 +34,5 @@ module.exports = {
                 $set: query
             }, {}, cb);
         }
-    }
+    };
+module.exports = headlineScrape;
